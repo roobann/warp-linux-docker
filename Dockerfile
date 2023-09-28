@@ -14,6 +14,8 @@ RUN mkdir -p /root/.local/share/warp && echo -n 'yes' > /root/.local/share/warp/
 
 COPY entrypoint.sh /entrypoint.sh
 
+RUN chmod +x /entrypoint.sh
+
 ENV WARP_SLEEP=2
 
 HEALTHCHECK --interval=15s --timeout=5s --start-period=30s --retries=3 \
